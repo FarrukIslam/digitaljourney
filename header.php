@@ -65,7 +65,7 @@
               wp_nav_menu( array(
                 'menu'              => __( 'Primay Menu', 'digitaljourney'),
                 'theme_location'    => 'primarymenuleft',
-                'depth'             => 4,
+                'depth'             => 2,
                 'menu_class'        => '',
                 'fallback_cb'       => 'digitaljourney_default_menu_left'
                 ));
@@ -73,7 +73,7 @@
               wp_nav_menu( array(
                 'menu'              => __( 'Primay Menu', 'digitaljourney'),
                 'theme_location'    => 'primarymenuright',
-                'depth'             => 4,
+                'depth'             => 2,
                 'menu_class'        => 'nav-items__secondary',
                 'fallback_cb'       => 'digitaljourney_default_menu_right'
                 ));                
