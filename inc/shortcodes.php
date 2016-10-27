@@ -1,10 +1,9 @@
-
 <?php 
 
 function djslider_shortcode_func() {
  ob_start();
 
- ?>
+?>
 <div class="hero ">
       <div class="hero__img">
 
