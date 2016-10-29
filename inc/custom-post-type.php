@@ -99,10 +99,10 @@ add_action( 'init', 'digitaljourney_perspectives_init' );
 function digitaljourney_perspectives_init() {
 	$labels = array(
 		'name'               => _x( 'Perspectives', 'Digitaljourney perspectives', 'digitaljourney' ),
-		'singular_name'      => _x( 'perspective', 'Digitaljourney Slider', 'digitaljourney' ),
+		'singular_name'      => _x( 'perspective', 'Digitaljourney perspective', 'digitaljourney' ),
 		'menu_name'          => _x( 'DJ perspectives', 'admin menu', 'digitaljourney' ),
 		'name_admin_bar'     => _x( 'perspectives', 'add new on admin bar', 'digitaljourney' ),
-		'add_new'            => _x( 'Add DJ New perspective', 'slider', 'digitaljourney' ),
+		'add_new'            => _x( 'Add DJ New perspective', 'perspective', 'digitaljourney' ),
 		'add_new_item'       => __( 'Add New perspective', 'digitaljourney' ),
 		'new_item'           => __( 'New perspectives', 'digitaljourney' ),
 		'edit_item'          => __( 'Edit perspective', 'digitaljourney' ),
@@ -127,9 +127,52 @@ function digitaljourney_perspectives_init() {
 		'has_archive'        => true,
 		'hierarchical'       => false,
 		'menu_position'      => null,
-		'supports' 			 => array(  'title','editor', 'thumbnail', 'comments' ),
+		'supports' 			 => array(  'title','editor', 'thumbnail', 'excerpt' ),
 	);
 
 	register_post_type( 'Dj_perspectives', $args );
+}
+
+
+/* Case Studies post type */
+
+
+add_action( 'init', 'digitaljourney_case_studies_init' );
+
+function digitaljourney_case_studies_init() {
+	$labels = array(
+		'name'               => _x( 'Case Studies', 'Digitaljourney Case Studies', 'digitaljourney' ),
+		'singular_name'      => _x( 'Case study', 'Digitaljourney Case Studies', 'digitaljourney' ),
+		'menu_name'          => _x( 'DJ Case Studies', 'admin menu', 'digitaljourney' ),
+		'name_admin_bar'     => _x( 'Case Studies', 'add new on admin bar', 'digitaljourney' ),
+		'add_new'            => _x( 'Add DJ New Case Studies', 'Case Studies', 'digitaljourney' ),
+		'add_new_item'       => __( 'Add New Case Studies', 'digitaljourney' ),
+		'new_item'           => __( 'New Case Studies', 'digitaljourney' ),
+		'edit_item'          => __( 'Edit Case Studio', 'digitaljourney' ),
+		'view_item'          => __( 'View Case Studio', 'digitaljourney' ),
+		'all_items'          => __( 'All DJ Case Studies', 'digitaljourney' ),
+		'search_items'       => __( 'Search Case Studies', 'digitaljourney' ),
+		'parent_item_colon'  => __( 'Parent Case Studies:', 'digitaljourney' ),
+		'not_found'          => __( 'No Case Studies found.', 'digitaljourney' ),
+		'not_found_in_trash' => __( 'No Case Studies found in Trash.', 'digitaljourney' )
+	);
+
+	$args = array(
+		'labels'             => $labels,
+        'description'        => __( 'Digitaljourney Case Studies Section.', 'digitaljourney' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'case-studies' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports' 			 => array(  'title','editor', 'thumbnail', 'excerpt' ),
+	);
+
+	register_post_type( 'Dj_case_studies', $args );
 }
 

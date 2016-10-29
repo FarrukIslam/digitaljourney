@@ -11,14 +11,30 @@
           <section class="case-study-list__wrapper content-section">
             <ul class="case-study-list">
 
+             <?php 
+
+                $Dj_case_studies_item = new wp_Query(array(
+                  'post_type' => 'Dj_case_studies',
+                  'post_per_pages' => -1
+                ));
+                
+                 while( $Dj_case_studies_item -> have_posts() ) : $Dj_case_studies_item -> the_post();
+
+                   $image_case_study = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'djprospective350x235' ); 
+
+              ?>
+
               <li class="case-study-list__item">
-                <a href="#" class="case-study-list__item__image"><img width="1200" height="800" src="img/handsome_website_case_study_silvercar_masthead_v2-2-1200x800.jpg" alt="" sizes="(max-width: 1200px) 100vw, 1200px" /></a>
-                <h3 class="case-study-list__item__title"><a href="#">Silvercar</a></h3>
+                <a href="<?php the_permalink(); ?>" class="case-study-list__item__image">
+                <img width="1200" height="800" src="<?php echo $image_case_study[0]; ?>" /></a>
+                <h3 class="case-study-list__item__title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                 <p>
-                  Silvercar chose us to help them take their brand and bring it front and center on all of their digital real estates.<br />
-                  <a href="#">Read more...</a>
+                 <?php the_excerpt();  ?><br />
+                  <a href="<?php the_permalink(); ?>">Read more...</a>
                 </p>
               </li>
+
+            <?php endwhile; ?>
                
             </ul>
           </section>
@@ -58,6 +74,15 @@
             </div>
 
           </section>
+
+          <style type="text/css">
+            .casestudy-form__image {
+    padding-bottom: 190px;
+    padding-bottom: 19rem;
+    background: url(http://localhost/digitaljourney/wp-content/uploads/2016/10/cs-entryfield@2x.jpg) no-repeat;
+    background-size: cover
+}
+          </style>
 
           <section class="page-list">
             <div>

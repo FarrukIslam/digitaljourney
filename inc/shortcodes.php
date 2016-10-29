@@ -1,4 +1,3 @@
-
 <?php 
 
 function djslider_shortcode_func() {
