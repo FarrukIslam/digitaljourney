@@ -73,7 +73,8 @@
               </div>
             </div>
 
-          </section>
+          </section> 
+          
 
           <style type="text/css">
             .casestudy-form__image {
