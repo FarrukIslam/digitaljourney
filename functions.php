@@ -130,6 +130,7 @@ function digitaljourney_default_menu_right(){
 /* Files require */
 require 'inc/custom-post-type.php';
 require 'inc/shortcodes.php';
+require_once get_template_directory() .'/cs-framework/cs-framework.php';
 
 
 

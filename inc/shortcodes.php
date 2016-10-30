@@ -3,7 +3,7 @@
 function djslider_shortcode_func() {
  ob_start();
 
- ?>
+?>
 <div class="hero ">
       <div class="hero__img">
 
@@ -161,44 +161,34 @@ add_shortcode('Dj_button2', 'djbutton2_shortcode_func');
 /* prospector shortcodes */
 
 
-function Dj_perspectives_shortcode_func() {
- ob_start();
-
- ?>
-
-
- 
+function Dj_perspectives_shortcode_func($post_ID) {
+	ob_start();
+	?>
     <ul class="blog-grid">
+		<?php 
 
-    <?php 
-
-      $Dj_perspectives_item = new wp_Query(array(
-        'post_type' => 'Dj_perspectives',
-        'post_per_pages' => 3
-      ));
-      
-       while( $Dj_perspectives_item -> have_posts() ) : $Dj_perspectives_item -> the_post();
-
-         $image_prospective = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'djprospective350x235' ); 
-
-    ?>
-
-            <li class="blog-grid__item">
-              <a class="blog-grid__item__content" href="<?php the_permalink(); ?>">
-                <div class="blog-grid__item__img">
-                  <img src="<?php echo $image_prospective[0]; ?>">                
-                </div>
-                <h4>Perspectives</h4>
-                <h3><?php  the_title(); ?></h3>
-                <p class="readmore_p">
-                  <span class="readmore">Read it now</span>
-                </p>
-              </a>
-            </li>
-
-
+		  $Dj_perspectives_item = new wp_Query(array(
+			'post_type' => 'Dj_perspectives',
+			'post_per_pages' => 3
+		  ));
+		  
+		   while( $Dj_perspectives_item -> have_posts() ) : $Dj_perspectives_item -> the_post();
+			$post_thumbnail_id = get_post_thumbnail_id($post_ID);
+			$image_prospective = wp_get_attachment_image_src($post_thumbnail_id, 'djprospective350x235');
+		?>
+		<li class="blog-grid__item">
+		  <a class="blog-grid__item__content" href="<?php the_permalink(); ?>">
+			<div class="blog-grid__item__img">
+			  <img src="<?php echo $image_prospective[0]; ?>">                
+			</div>
+			<h4>Perspectives</h4>
+			<h3><?php  the_title(); ?></h3>
+			<p class="readmore_p">
+			  <span class="readmore">Read it now</span>
+			</p>
+		  </a>
+		</li>
      <?php endwhile; ?>
-
      </ul>
 
 

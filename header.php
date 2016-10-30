@@ -54,18 +54,66 @@
 
         <header class="page__header">
           <div>
+
+         <?php 
+
+         $logo =  cs_get_option('logo');
+         $whitelogo =  cs_get_option('whitelogo');
+
+          ?>
+                    
+            <?php if($logo) : ?>
+
+              <style>
+                    .branding {
+                    background-image: url(<?php echo $logo; ?>);
+                     }
+               </style>
+
+            <?php elseif($whitelogo) : ?> 
+
+                <style>
+                    .archive .branding,
+                    .blog .branding,
+                    .error404 .branding,
+                    .theme-dark .branding {
+                        background-image: url(<?php echo $whitelogo; ?>)
+                    }
+
+                </style>   
+
+            <?php else : ?>
+
+
+                <style>
+                    .branding {
+                    background-image: url(<?php echo $logo; ?>);
+                     }
+                    .archive .branding,
+                    .blog .branding,
+                    .error404 .branding,
+                    .theme-dark .branding {
+                        background-image: url(<?php echo $whitelogo; ?>)
+                    } 
+               </style>
+
+            <?php endif; ?>
+
             <a class="branding" href="<?php bloginfo('home'); ?>">Handsome</a>
             <a class="mobile-nav-toggle" href="javascript:void(0)">
               <span>Menu</span>
               <span>Close</span>
             </a>
+
+
+
             <nav class="main-nav">
 
             <?php
               wp_nav_menu( array(
                 'menu'              => __( 'Primay Menu', 'digitaljourney'),
                 'theme_location'    => 'primarymenuleft',
-                'depth'             => 4,
+                'depth'             => 2,
                 'menu_class'        => '',
                 'fallback_cb'       => 'digitaljourney_default_menu_left'
                 ));
@@ -73,7 +121,7 @@
               wp_nav_menu( array(
                 'menu'              => __( 'Primay Menu', 'digitaljourney'),
                 'theme_location'    => 'primarymenuright',
-                'depth'             => 4,
+                'depth'             => 2,
                 'menu_class'        => 'nav-items__secondary',
                 'fallback_cb'       => 'digitaljourney_default_menu_right'
                 ));                
