@@ -1,29 +1,61 @@
 <?php 
-/* Template Name: Perspectives */
-get_header(); ?>
-<div class="content_wrapper theme-dark page page-blog">
 
-            <section class="content-section animate-up">
-              <header class="section-header section-header--no-border section-header--masthead">
-                <h1>Perspectives: Thoughts and stories by real Handsome people</h1>
-                <h4>48 ARTICLES IN 7 JOURNALS</h4>
-              </header>
-            </section>
+/* Perspectives title shortcodes */
 
-            <!-- BLOG GRID LIST -->
-            <div class="animate-up">
+
+function Dj_perspectives_title_shortcode_func($atts,$post_ID) {
+
+   extract( shortcode_atts( array(
+    'title' => 'Perspectives: Thoughts and stories by real Handsome people',
+    'all_numberof_post_content' => '48 ARTICLES IN 7 JOURNALS',
+   ), $atts) );
+
+	ob_start();
+	?>
+       <section class="content-section animate-up">
+          <header class="section-header section-header--no-border section-header--masthead">
+            <h1><?php echo $title; ?></h1>
+            <h4><?php echo $all_numberof_post_content; ?></h4>
+          </header>
+        </section>
+
+
+ <?php 
+ $html = ob_get_contents();
+ ob_get_clean();
+ return $html;
+}
+
+add_shortcode('Dj_perspectives_title', 'Dj_perspectives_title_shortcode_func');
+
+
+
+/* Perspectives shortcodes */
+
+
+function Dj_perspectives_shortcode_func($atts,$post_ID) {
+
+   extract( shortcode_atts( array(
+    'numberpost' => '1',
+   ), $atts) );
+
+	ob_start();
+	?>
+        <div class="animate-up">
               <ul class="blog-grid" >
 
               <?php 
 
                 $Dj_perspectives_item = new wp_Query(array(
                   'post_type' => 'Dj_perspectives',
-                  'posts_per_page' => -1
+                  'posts_per_page' => $numberpost,
                 ));
                 
                  while( $Dj_perspectives_item -> have_posts() ) : $Dj_perspectives_item -> the_post();
 
-                   $image_prospective = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'djprospective350x235' ); 
+                  
+                   $post_thumbnail_id = get_post_thumbnail_id($post_ID);
+			$image_prospective = wp_get_attachment_image_src($post_thumbnail_id, 'djprospective350x235');
 
               ?>
 
@@ -48,14 +80,34 @@ get_header(); ?>
 
             </div>
 
- 
+
+ <?php 
+ $html = ob_get_contents();
+ ob_get_clean();
+ return $html;
+}
+
+add_shortcode('Dj_perspectives_item', 'Dj_perspectives_shortcode_func');
+
+
+/* recent post airtical */
+
+function Dj_perspectives_recent_airticle_shortcode_func($atts,$post_ID) {
+
+   extract( shortcode_atts( array(
+    'title' => 'Most Recent Articles',
+    'numberpost' => '1',
+   ), $atts) );
+
+	ob_start();
+	?>
           <div class="container articles-list">
-            <h4 class="gray-highlight">Most Recent Articles</h4>
+            <h4 class="gray-highlight"><?php echo $title; ?></h4>
             <ul>
 
               <?php
                 $args = array(
-                  'numberposts' => 10,
+                  'numberposts' => $numberpost,
                   'offset' => 0,
                   'category' => 0,
                   'orderby' => 'post_date',
@@ -90,6 +142,11 @@ get_header(); ?>
             </ul>
           </div>
 
-      </div>
+ <?php 
+ $html = ob_get_contents();
+ ob_get_clean();
+ return $html;
+}
 
-      <?php get_footer(); ?>
+add_shortcode('Dj_recent_post_perspective', 'Dj_perspectives_recent_airticle_shortcode_func');
+

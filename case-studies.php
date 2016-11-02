@@ -15,7 +15,7 @@
 
                 $Dj_case_studies_item = new wp_Query(array(
                   'post_type' => 'Dj_case_studies',
-                  'post_per_pages' => -1
+                  'posts_per_page' => -1
                 ));
                 
                  while( $Dj_case_studies_item -> have_posts() ) : $Dj_case_studies_item -> the_post();

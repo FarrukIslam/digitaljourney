@@ -12,7 +12,7 @@ function djslider_shortcode_func() {
           <?php 
       $slidersitems = new wp_Query(array(
         'post_type' => 'Dj_slider',
-        'post_per_pages' => -1
+        'posts_per_page' => -1
       ));
       
        while( $slidersitems -> have_posts() ) : $slidersitems -> the_post();
@@ -72,6 +72,7 @@ function djslider_shortcode_func() {
 }
 
 add_shortcode('Dj_slider', 'djslider_shortcode_func');
+
 
 
 /** dj button **/
@@ -158,50 +159,12 @@ function djbutton2_shortcode_func( $atts ) {
 add_shortcode('Dj_button2', 'djbutton2_shortcode_func');
 
 
-/* prospector shortcodes */
 
-
-function Dj_perspectives_shortcode_func($post_ID) {
-	ob_start();
-	?>
-    <ul class="blog-grid">
-		<?php 
-
-		  $Dj_perspectives_item = new wp_Query(array(
-			'post_type' => 'Dj_perspectives',
-			'post_per_pages' => 3
-		  ));
-		  
-		   while( $Dj_perspectives_item -> have_posts() ) : $Dj_perspectives_item -> the_post();
-			$post_thumbnail_id = get_post_thumbnail_id($post_ID);
-			$image_prospective = wp_get_attachment_image_src($post_thumbnail_id, 'djprospective350x235');
-		?>
-		<li class="blog-grid__item">
-		  <a class="blog-grid__item__content" href="<?php the_permalink(); ?>">
-			<div class="blog-grid__item__img">
-			  <img src="<?php echo $image_prospective[0]; ?>">                
-			</div>
-			<h4>Perspectives</h4>
-			<h3><?php  the_title(); ?></h3>
-			<p class="readmore_p">
-			  <span class="readmore">Read it now</span>
-			</p>
-		  </a>
-		</li>
-     <?php endwhile; ?>
-     </ul>
-
-
- <?php 
- $html = ob_get_contents();
- ob_get_clean();
- return $html;
-}
-
-add_shortcode('Dj_perspectives', 'Dj_perspectives_shortcode_func');
 
 
 /* services page */
+
+
 /** dj offering services title **/
 
 function offering_title_services_shortcode_func( $atts ) {
@@ -294,7 +257,7 @@ add_shortcode('Dj_section_content', 'dj_section_content_fun');
 
 function service_list_shortcode_func( $atts ) {
     extract( shortcode_atts( array(
-    'service_list_title' => 'Sensemaking',
+    'service_list_title' => 'Title Service Item ',
     'service_list_content' => 'Write your Service list content',
     'service_list' => '',
    ), $atts) );
@@ -310,13 +273,7 @@ function service_list_shortcode_func( $atts ) {
         <div class="block-grid__item__content">
           <h3><?php echo $service_list_title; ?></h3>
           <p><?php echo $service_list_content; ?></p>
-          <ul>
-            <li>Prototyping</li>
-            <li>System Integration</li>
-            <li>Systems Analysis</li>
-            <li>Full-stack Web &amp; Mobile Development</li>
-            <li>Quality Assurance &amp; Testing</li>
-          </ul>
+         <?php echo $service_list; ?>
         </div>
       </div>
     </div>
@@ -329,3 +286,46 @@ function service_list_shortcode_func( $atts ) {
 }
 
 add_shortcode('Dj_service_list', 'service_list_shortcode_func');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function Dj_singe_image_section_func($atts ) {
+
+extract( shortcode_atts( array(
+    'singe_img' => 'http://localhost/digitaljourney/wp-content/uploads/2016/10/services-bottom@2x.jpg',
+   ), $atts) );
+
+$image = wp_get_attachment_image_src( $singe_img, 'full');
+  $image_src = $image['0']; 
+
+
+
+  ob_start();
+  ?>
+    
+     <div class="core-services-image">
+        <img width="100%" src="<?php echo $image_src; ?>" alt="" >
+      </div>
+
+            
+
+   <?php 
+   $html = ob_get_contents();
+   ob_get_clean();
+   return $html;
+  }
+
+add_shortcode('Dj_single_image', 'Dj_singe_image_section_func');
+
+
