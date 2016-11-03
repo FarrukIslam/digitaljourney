@@ -127,40 +127,34 @@ function Dj_whyhandsome_features_list_func($atts ) {
 
 extract( shortcode_atts( array(
    
-    'img' => 'http://localhost/digitaljourney/wp-content/uploads/2016/11/why-topright@2x.jpg',
-    'title' => 'Title Here',
-    'content' => 'Content Goes To Here',
+    'feature_img' => 'http://localhost/digitaljourney/wp-content/uploads/2016/11/why-topright@2x.jpg',
+    'feature_title' => 'Title Here',
+    'feature_content' => 'Content Goes To Here',
 
 
    ), $atts) );
 
-	$img = wp_get_attachment_image_src( $img, 'full');
+	$img = wp_get_attachment_image_src( $feature_img, 'full');
 	
-	$image = $img['0'];	
+	$image_fea = $img['0'];	
 	
 
 	ob_start();
 	?>
-
-	
-    
-	   <div class="card-grid__item">
-            <div class="card-grid__item-img"></div>
-            <div class="card-grid__item-content">
-              <h3><?php echo $title; ?></h3>
-              <p><?php echo $content; ?></p>
-            </div>
-        </div>
-        <style>
-        	.card-grid__item-img {
-		   
-		    background-image: url(<?php echo $image; ?>);
-		}
-        </style>
-
-
+  <div class="col-md-12">
+     <div class="card-grid__item">
+        <div class="card-grid__item-img_custom">
           
-
+          <img src="<?php echo $img['0']; ?>" class="img-responsive">
+        </div>
+       
+        <div class="card-grid__item-content">
+          <h3><?php echo $feature_title; ?></h3>
+          <p><?php echo $feature_content; ?></p>
+        </div>
+      </div>
+      </div>
+    
 	 <?php 
 	 $html = ob_get_contents();
 	 ob_get_clean();

@@ -6186,10 +6186,11 @@ a {
     margin: 0 auto;
 }
 .container {
-    width: 90% !important;
-    max-width: 90% !important%;
+    width: 97%;
+    max-width: 97%;
     margin: 0 auto;
 }
+
 .vc_row {
     margin-left: -15px;
     margin-right: -15px;

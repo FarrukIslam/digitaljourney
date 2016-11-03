@@ -1,12 +1,13 @@
 <?php
 /* Template Name: Case-Studies */
  get_header(); ?>
+ 
 <div class="container ">
-              <header class="section-header section-header--centered">
-                <h4>Case Studies</h4>
-                <h1 style="margin-bottom:0">We solve human problems for important companies.</h1>
-              </header>
-          </div>
+    <header class="section-header section-header--centered">
+      <h4>Case Studies</h4>
+      <h1 style="margin-bottom:0">We solve human problems for important companies.</h1>
+    </header>
+</div>
 
           <section class="case-study-list__wrapper content-section">
             <ul class="case-study-list">

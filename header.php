@@ -20,13 +20,22 @@
 
     <!-- Favicons
     ================================================== -->
-    <link rel="apple-touch-icon-precomposed" href="<?php echo get_template_directory_uri(); ?>/img/57.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_template_directory_uri(); ?>/img/72.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php echo get_template_directory_uri(); ?>/img/114.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri(); ?>/img/144.png"/>
-    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.png"/>
+   
+    <?php $favicon = cs_get_option('favicon'); ?>
+      <?php if($favicon) : ?>
+      <link rel="shortcut icon" href="<?php echo $favicon; ?>" sizes="32x32" />
+
+    <?php else : ?>
+        
+    <link rel="shortcut icon" href="http://digitaljourney.com/wp-content/uploads/2016/11/fav.png" sizes="32x32" />
+
+    <?php endif; ?>
+
 
     <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.css">
+
+
+
 
     
 
@@ -61,7 +70,22 @@
               <span>Close</span>
             </a>
 
+            <?php $logo = cs_get_option('logo'); ?>
+              <?php if($logo) : ?>
+              <style>
+                .branding {
+                    background-image: url(<?php echo $logo; ?>);
+                }
+            </style>
 
+            <?php else : ?>
+                <style>
+                .branding {
+                    background-image: url(http://digitaljourney.com/wp-content/uploads/2016/11/dj_logo1.png);
+                }
+                </style>
+                
+            <?php endif; ?>
 
             <nav class="main-nav">
 

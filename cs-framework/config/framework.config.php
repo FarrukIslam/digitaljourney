@@ -12,7 +12,7 @@ $settings           = array(
   'show_reset_all'  => true,
   'menu_position'   => 58,
   'menu_icon'       => 'dashicons-hammer',
-  'framework_title' => '<img src="'. get_template_directory_uri() .'/img/handsomeLogo.svg" alt="" />',
+  'framework_title' => '<img src="'. get_template_directory_uri() .'/img/dj_logo11.png" alt="" />',
 );
 
 // ===============================================================================================
@@ -33,44 +33,6 @@ $options[]   = array(
 
 
 
- // -----------------------------
-    // begin: Background section       -
-    // -----------------------------
-    array(
-      'name'      => 'backgroun_setting',
-      'title'     => 'Body Background Setting',
-      'icon'      => 'fa fa-file-image-o',
-
-      // begin: fields
-      'fields'    => array(
-
-        // begin: footer Copyright
-           array(
-          'id'            => 'body_bg',
-          'type'          => 'upload',
-          'title'         => 'Upload Body Background Image',
-          'settings'      => array(
-           'upload_type'  => 'image',
-           'button_title' => 'Upload',
-           'frame_title'  => 'Select an background image',
-           'insert_title' => 'Use this image',
-          ),
-        ),
-         array(
-            'id'      => 'body_bg_color',
-            'type'    => 'color_picker',
-            'title'   => 'Select Body Background Color',
-            'default' => '#00b2f0',
-          ),
-        
-
-      ), // begin: fields end
-
-    ), // end: Background section 
-
-
-
-
 
 
     // -----------------------------
@@ -78,7 +40,7 @@ $options[]   = array(
     // -----------------------------
     array(
       'name'  => 'header_options',
-      'title' => 'Header',
+      'title' => 'Header and Footer',
       'icon'  => 'fa fa-header',
 
       // begin: fields
@@ -120,51 +82,33 @@ $options[]   = array(
            'insert_title' => 'Use this image',
           ),
         ),
+        array(
+          'id'            => 'footer_logo',
+          'type'          => 'upload',
+          'title'         => 'Footer Logo Images',
+          'settings'      => array(
+           'upload_type'  => 'image',
+           'button_title' => 'Upload',
+           'frame_title'  => 'Select an White logo image',
+           'insert_title' => 'Use this image',
+          ),
+        ),
+        array(
+          'id'            => 'footer_white_logo',
+          'type'          => 'upload',
+          'title'         => 'Footer White Logo Images',
+          'settings'      => array(
+           'upload_type'  => 'image',
+           'button_title' => 'Upload',
+           'frame_title'  => 'Select an White logo image',
+           'insert_title' => 'Use this image',
+          ),
+        ),
       )
     ), // end: Header Option 
 
 
-    // -----------------------------
-    // begin: Footer Options        -
-    // -----------------------------
-    array(
-      'name'      => 'footer_options',
-      'title'     => 'Footer',
-      'icon'      => 'fa fa-copyright',
-
-      // begin: fields
-      'fields'    => array(
-
-        // begin: footer Copyright
-        array(
-          'id'    => 'copy_right',
-          'type'  => 'textarea',
-          'title' => 'Footer Copyright Text',
-        ),
-
-      ), // begin: fields end
-
-    ), // end: Footer Options
-
-    // -----------------------------
-    // Sidebar Option      
-    // -----------------------------
-    array(
-      'name'  => 'sidebar_options',
-      'title' => 'Left Sidbar',
-      'icon'  => 'fa fa-th-list',
-
-      // begin: fields
-      'fields'    => array(
-
-        // begin: Sidebar On/Ofi
-        array(
-          'id'           => 'enable_sidebar',
-          'type'         => 'switcher',
-          'title'        => 'Left Sidebar Enable or Disable',
-        ),
-      )
-    ), // end: Sidebar Option 
+    
 
   ) // end: General section
 ); // end: General Setting

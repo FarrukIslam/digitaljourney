@@ -7,7 +7,25 @@
 	     <?php endif; ?>
 
 
-       
+      <?php $footer_logo = cs_get_option('footer_logo'); ?>
+        <?php if($footer_logo) : ?>
+        <style>
+           .page__footer:after {  
+                background-image: url(<?php echo $footer_logo; ?>);
+            } 
+      </style>
+
+      <?php else : ?>
+          <style>
+          .page__footer:after {  
+                background-image: url(http://digitaljourney.com/wp-content/uploads/2016/11/handsome_logo_footer-1.png);
+            } 
+          </style>
+          
+      <?php endif; ?>
+
+
+     
       </footer>
 
 

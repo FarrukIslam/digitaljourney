@@ -27,6 +27,33 @@ vc_map( array(
 /* propestive section  */
 
 vc_map( array(
+  "name" => __("Digital Journey Perspectives Fontpage", 'Digitaljourney'),
+  "base" => "Dj_font_page_perspectives_item",
+  "icon" => "Dj_font_page_perspectives_item_icon",
+  "category" =>array('By Digitaljourney', 'Content'),
+  "description" => __('Digitaljourney Perspectives Font page', 'Digitaljourney'),
+  "params" => array(
+  		
+  		array(
+		  "type" => "textfield",
+		  "heading" => __("Propestives Item", 'Digitaljourney'),
+		  "param_name" => "numberpost",
+		  "admin_label" => true,
+		  "value" => __("1", 'Digitaljourney')
+		),
+  		array(
+		  "type" => "textfield",
+		  "heading" => __("Propestives Name of Item", 'Digitaljourney'),
+		  "param_name" => "item_name",
+		  "admin_label" => true,
+		  "value" => __("propestives", 'Digitaljourney')
+		),
+	
+  )
+) );
+
+
+vc_map( array(
   "name" => __("Digital Journey Perspectives", 'Digitaljourney'),
   "base" => "Dj_perspectives",
   "icon" => "Dj_perspectives_icon",
@@ -159,6 +186,35 @@ vc_map( array(
 		  "param_name" => "title",
 		  "admin_label" => true,
 		  "value" => __("Page Ttile Here", 'Digitaljourney')
+		)
+
+  )
+) );
+
+
+
+/* Why Hansome section Content */
+vc_map( array(
+  "name" => __("Why Handsome Content Section Title", 'Digitaljourney'),
+  "base" => "Dj_Whyhandsome_content_section",
+  "icon" => "Dj_Whyhandsome_content_section_icon",
+  "category" =>array('By Digitaljourney', 'Content'),
+  "description" => __('Add Why Handsome Content Section Title and sub Title', 'Digitaljourney'),
+  "params" => array(
+
+		array(
+		  "type" => "textfield",
+		  "heading" => __("Page Subtitle", 'Digitaljourney'),
+		  "param_name" => "whyhandsome_content_title",
+		  "admin_label" => true,
+		  "value" => __("Subtitle Here", 'Digitaljourney')
+		),
+		array(
+		  "type" => "textarea_html",
+		  "heading" => __("Why", 'Digitaljourney'),
+		  "param_name" => "whyhandsome_content",
+		  "admin_label" => true,
+		  "value" => __("Why Handsome Content Section", 'Digitaljourney')
 		)
 
   )
@@ -618,21 +674,21 @@ vc_map( array(
   		 array(
 		  "type" => "attach_image",
 		  "heading" => __("Why Handsome Image", 'Digitaljourney'),
-		  "param_name" => "img",
+		  "param_name" => "feature_img",
 		  "value" => "",
 		  "description" => __("Select image from media library.", 'Digitaljourney')
 		),
   		 array(
 		  "type" => "textfield",
-		  "heading" => __("Why Handsome Item Title", 'Digitaljourney'),
-		  "param_name" => "title",
+		  "heading" => __("Why Handsome Feature Item Title", 'Digitaljourney'),
+		  "param_name" => "feature_title",
 		  "admin_label" => true,
 		  "value" =>  __("Add Title", 'Digitaljourney')
 		),
   		array(
 		  "type" => "textarea_html",
-		  "heading" => __("Why Handsome Item Content", 'Digitaljourney'),
-		  "param_name" => "content",
+		  "heading" => __("Why Handsome Feature Item Content", 'Digitaljourney'),
+		  "param_name" => "feature_content",
 		  "admin_label" => true,
 		  "value" => __("Add Content", 'Digitaljourney')
 		), 

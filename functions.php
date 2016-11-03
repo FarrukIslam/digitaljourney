@@ -58,7 +58,7 @@ if (!class_exists('digitaljourney_scripts_load'))
 
 			add_theme_support('post-thumbnails');
 
-			add_image_size('djslider1286x556', 2000, 2000);
+			add_image_size('djslider1286x556', 1286, 556);
 			add_image_size('djprospective350x235', 350, 235);
 			add_image_size('djcasestudies350x235', 350, 225);
 			add_image_size('djwhyhandsomepost210x210', 210, 210);
@@ -137,6 +137,7 @@ require 'inc/contact-shortcodes.php';
 require 'inc/case-studies-shortcodes.php';
 require 'inc/perspectives-shortcodes.php';
 require 'inc/why-handsome-shortcodes.php';
+require 'inc/font-page-shortcodes.php';
 require_once get_template_directory() .'/cs-framework/cs-framework.php';
 
 
