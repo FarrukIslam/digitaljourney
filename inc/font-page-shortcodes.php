@@ -3,7 +3,7 @@
 function djslider_shortcode_func($atts,$post_ID) {
 
    extract( shortcode_atts( array(
-    'numberpost' => '1',
+    'numberpost' => '3',
    ), $atts) );
 
  ob_start();

@@ -430,7 +430,7 @@ vc_map( array(
 		  "heading" => __("Add Mail Subcriber Shortcdoe", 'Digitaljourney'),
 		  "param_name" => "mail_form",
 		  "admin_label" => true,
-		  "value" => __("Mail Subcriber Form Shortcdoes", 'Digitaljourney')
+		  "value" => __("", 'Digitaljourney')
 		)
 
   )

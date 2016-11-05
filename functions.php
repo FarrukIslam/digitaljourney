@@ -28,7 +28,25 @@ if (!class_exists('digitaljourney_scripts_load'))
 			 jQuery Files
 			---------------------------------------------------------------	
 			**/
-			
+			wp_enqueue_script('jQuery');
+
+			wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', array(
+				'jquery'
+			) , digitaljourney, true);
+
+			wp_enqueue_script('vendor', get_template_directory_uri() . '/js/vendor.js', array(
+				'jquery'
+			) , digitaljourney, true);
+
+			wp_enqueue_script('setting', get_template_directory_uri() . '/js/setting.js', array(
+				'jquery'
+			) , digitaljourney, true);
+
+			wp_enqueue_script('wp-embed.min', get_template_directory_uri() . '/js/wp-embed.min.js', array(
+				'jquery'
+			) , digitaljourney, true);
+
+
 
 			
 			/* wordpress comments */

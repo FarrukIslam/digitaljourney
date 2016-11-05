@@ -8,6 +8,7 @@ function Dj_casestudies_shortcode_func($atts,$post_ID) {
     'numberpost' => '1',
    ), $atts) );
 
+
 	ob_start();
 	?>
      <section class="case-study-list__wrapper content-section">
@@ -71,6 +72,8 @@ function Dj_sectiontitle_shortcode_func($atts,$post_ID) {
 	  <h1><?php echo $title; ?></h1>
 	</header>
 
+  
+
 	<style>
 		.section-header {
 		    text-align: <?php echo $float; ?> !important;
@@ -110,7 +113,20 @@ function Dj_mailsubcriber_form_shortcode_func($atts ) {
 extract( shortcode_atts( array(
     'mail_subcriber_text' => 'Enter your email and a strategist will be in touch with you shortly.',
     'mail_subcriber_img' => 'http://localhost/digitaljourney/wp-content/uploads/2016/10/cs-entryfield@2x.jpg',
-    'mail_form' => ' ',
+    'mail_form' => '<form novalidate="novalidate">
+                      <p class="email-field-wrap">
+                        <span class="your-email">
+                          <input type="email" name="your-email" placeholder="Enter email address" />
+                        </span>
+                        <button class="arrow-check-btn" type="submit">
+                          <span class="arrow-check">
+                            <svg id="form-arrow-svg" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid">
+                               <g class="arrow-group"><path id="arrow" d="M 3,3  8,3  13,8  8,13  3,13  8,8  3,3 Z" /></g>
+                            </svg>
+                          </span>
+                        </button>
+                      </p>
+                    </form>',
 
    ), $atts) );
 
@@ -130,20 +146,7 @@ $image = wp_get_attachment_image_src( $mail_subcriber_img, 'full');
                   <div class="casestudy-form__form__inner">
 
 
-                    <form novalidate="novalidate">
-                      <p class="email-field-wrap">
-                        <span class="your-email">
-                          <input type="email" name="your-email" placeholder="Enter email address" />
-                        </span>
-                        <button class="arrow-check-btn" type="submit">
-                          <span class="arrow-check">
-                            <svg id="form-arrow-svg" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid">
-                               <g class="arrow-group"><path id="arrow" d="M 3,3  8,3  13,8  8,13  3,13  8,8  3,3 Z" /></g>
-                            </svg>
-                          </span>
-                        </button>
-                      </p>
-                    </form>
+                  <?php  echo $mail_form; ?>
 
 
                     <p class="msg sendingMsg">Sending...</p>
