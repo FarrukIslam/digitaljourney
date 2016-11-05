@@ -28,7 +28,7 @@ if (!class_exists('digitaljourney_scripts_load'))
 			 jQuery Files
 			---------------------------------------------------------------	
 			**/
-			wp_enqueue_script('jQuery');
+			wp_enqueue_script('jQuery',true);
 
 			wp_enqueue_script('bootstrap.min', get_template_directory_uri() . '/js/bootstrap.min.js', array(
 				'jquery'

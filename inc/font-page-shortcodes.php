@@ -27,10 +27,10 @@ function djslider_shortcode_func($atts,$post_ID) {
 
          <?php 
             $post_thumbnail_id = get_post_thumbnail_id($post_ID);
-			$image = wp_get_attachment_image_src($post_thumbnail_id, 'djslider1286x556'); ?>
+		    	$image = wp_get_attachment_image_src($post_thumbnail_id, 'djslider1286x556'); ?>
 
 
-          <li style="background-image: url('<?php echo $image[0]; ?>" />
+          <li style="background-image: url('<?php echo $image[0]; ?>')">
 
             <a class="casestudy-cta" href="<?php the_permalink(); ?>">
               <h3><?php echo get_post_meta( get_the_ID(), 'djslider_title', true ); ?></h3>

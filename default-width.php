@@ -1,10 +1,11 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Default Theme Width */
+ get_header(); ?>
 
     <div class="page__content">
       <div class="content_wrapper ">
 
-       <section style="padding:50px 20px !important" class="content-section">
-     
+      
      
 
        <?php if(have_posts()) : ?>
@@ -15,8 +16,7 @@
         
        <?php endif; ?> 
 
-          </section>
-     
+         
 
         
      

@@ -1,4 +1,8 @@
-/* Theme Name: Digital Journey */
+/* Theme Name: Digital Journey 
+*/
+
+
+
 @charset "UTF-8";
 img,
 legend {
@@ -2078,7 +2082,9 @@ body>.select2-container {
 .bxslider li {
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: cover
+    background-size: cover;
+    z-index: 9999;
+
 }
 
 .bx-wrapper .bx-viewport {
@@ -5447,7 +5453,7 @@ body.archive .blog-grid {
 
 @media screen and (max-width:801px) {
     .hero__headline {
-        padding-top: 155px;
+        padding-top: 95px !important;
         padding-top: 15.5rem
     }
     .entry-content--homepage h2 {
