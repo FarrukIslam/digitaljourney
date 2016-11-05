@@ -38,13 +38,11 @@ if (!class_exists('digitaljourney_scripts_load'))
 				'jquery'
 			) , digitaljourney, true);
 
-			wp_enqueue_script('setting', get_template_directory_uri() . '/js/setting.js', array(
+			wp_enqueue_script('setting', get_template_directory_uri() . '/js/handsome.js', array(
 				'jquery'
 			) , digitaljourney, true);
 
-			wp_enqueue_script('wp-embed.min', get_template_directory_uri() . '/js/wp-embed.min.js', array(
-				'jquery'
-			) , digitaljourney, true);
+			
 
 
 
