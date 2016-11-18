@@ -1,4 +1,4 @@
-/* Theme Name: Digital Journey 
+﻿/* Theme Name: Digital Journey 
 */
 
 
@@ -6245,4 +6245,31 @@ a {
     line-height: 25px;
     color: #fff;
     
+}
+
+
+/* Contact Form */
+.custom_style label {
+    line-height: 41px;
+}
+.custom_style select#your-subject option {
+    color: #000;
+}
+.custom_style select#your-subject{
+    width: 100%;
+}
+.custom_style .arrow-check-btn {
+    padding: 0;
+    float: right;
+    min-width: 120px;
+}
+.custom_style #your-submit {
+    background-color: transparent;
+    border: 0;
+    color: #FFF;
+    font-size: 2.2rem;
+    margin-bottom: 2.2rem;
+    line-height: 1.5;
+    font-weight: 700;
+    float: left;
 }

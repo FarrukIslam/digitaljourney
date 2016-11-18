@@ -62,58 +62,7 @@ $image = wp_get_attachment_image_src( $contactform_img, 'full');
 
                         <div class="tab tab-2 tab-active">
 
-                        <?php echo $contact_form; ?>
-
-                          <form class="contact-form" novalidate="novalidate">
-
-                            <div class="form-input">
-                              <label>My name is</label>
-                              <div id="name-input-wrap" class="form-input__inline">
-                                <input type="text" name="NAME" required>
-                                <p class="error-message">Please enter your name. </p>
-                              </div>
-                              <label class="and-desktop">and</label>
-                            </div>
-
-
-                            <div id="subject-input-wrap" class="form-input">
-                              <label><span class="and-mobile">and</span> I want to talk about</label>
-                              <div  class="form-input__inline">
-                                <div class="custom-select">
-                                  <select name="SUBJECT"  style="width: 100%" required>
-                                    <option value="New Business" selected="selected">new business</option>
-                                    <option value="Career">a career</option>
-                                    <option value="Media">media or other</option>
-                                  </select>
-                                </div>
-                                <p class="error-message subject-error-message">Tell us what you are interested in.</p>
-                              </div>
-                            </div>
-
-                            <div class="form-input">
-                              <label>My email address is</label>
-                              <div class="form-input__inline" id="email-input-wrap">
-                                <input type="email" name="email_address" required>
-                                <p class="error-message">Please enter a valid email address.</p>
-                              </div>
-                            </div>
-
-                            <div class="form-input">
-                              <textarea name="MESSAGE" placeholder="Optional details"></textarea>
-                            </div>
-
-                            <div class="form-input">
-                              <button type="submit" class="arrow-check-btn">
-                                <span class="arrow-check-btn__text">Submit</span>
-                                <span class="arrow-check">
-                                  <svg id="form-arrow-svg" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid">
-                                    <g class="arrow-group"><path id="arrow" d="M 3,3  8,3  13,8  8,13  3,13  8,8  3,3 Z"></path></g>
-                                  </svg>
-                                </span>
-                              </button>
-                            </div>
-
-                          </form>
+                        <?php echo do_shortcode('[contact-form-7 id="'.$contact_form.'" title="Contact form 1"]'); ?>
 
                           <p class="tab-toggle"><?php echo $contact_form_text; ?></p>
                         </div>

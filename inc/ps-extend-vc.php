@@ -264,8 +264,8 @@ vc_map( array(
 		  "value" => __("Contact Form Text", 'Digitaljourney')
 		),
 		array(
-		  "type" => "textarea_html",
-		  "heading" => __("Contact Form", 'Digitaljourney'),
+		  "type" => "textfield",
+		  "heading" => __("Contact Form ID", 'Digitaljourney'),
 		  "param_name" => "contact_form",
 		  "admin_label" => true,
 		  "value" => __("Contact Form", 'Digitaljourney')
